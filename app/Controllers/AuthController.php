@@ -56,7 +56,7 @@ public function loginProcess()
         $data = [
             'username' => $this->request->getPost('username'),
             'email' => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT)
+            'password' => $this->request->getPost('password')
         ];
 
         if ($model->save($data)) {
